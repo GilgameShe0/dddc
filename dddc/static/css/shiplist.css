@@ -1,0 +1,40 @@
+body {min-width: 320px;max-width: 540px;font-size: 16px;margin: 0 auto;padding-top: 44px;}
+body, input, textarea, button, select, pre, tt, code, kbd, samp, optgroup, option {line-height: 1.5;font-family: arial,'\5b8b\4f53','\5fae\8f6f\96c5\9ed1',verdana,helvetica,sans-serif;}
+html {background: #f3f3f3;color: #333;font-size: 16px;}
+div, p, img, ul, ol, li, form, input, label, dl, dt, dd, h1, h2, h3, h4, h5, h6 {list-style-type: none;margin: 0;padding: 0; display: block;}
+
+/*头部返回键和标题*/
+.list_header {height: 44px;line-height: 44px;min-width: 240px;background: #6684ed;color: #fff;font-size: 18px;text-align: center;position: fixed;top: 0;left: 0;right: 0;z-index: 1;padding: 0 15px;}
+.back_icon{position: absolute;top: 6px;left: 10px;color: #fff;width: 20px;padding: 5px;height: 25px;display: inline-block;text-decoration: none;cursor: auto;line-height: 25px;}
+.nav_title {max-width: 220px;overflow: auto;white-space: nowrap;display: inline-block;font-size: 100%;margin:0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0;-webkit-margin-end: 0;font-weight: bold;}
+
+.ships_tab {position: relative;display: block;}
+/*显示用户已选择面板*/
+.user_tab{background: #f3f3f3;font-size: 18px;text-align: center;padding: 9px 10px;display: block;}
+/*船列表*/
+.ship_list_tab{border-color: transparent;border-width: 0;overflow: hidden;width: 100%;height: 100%;border-style: solid;padding: 10px;}
+.ship_tips{width: 50%;display: list-item;text-align: -webkit-match-parent;padding: 0;border: none;overflow: auto;zoom: 1;overflow-x: hidden;overflow-y: hidden;line-height: 140%;float: left;margin: auto;}
+.img{height:145px;margin: 0;text-align: center;}
+.img>img{height: 145px;width: 145px;display: inline;margin: 0;}
+.ship_info{text-align: center;height: 67px;padding:0 3px 0 6px;}
+
+/*船信息*/
+.bottom_tab{height: 60px;line-height: 60px;min-width: 240px;background: #6684ed;color: #fff;font-size: 18px;text-align: center;position: fixed;bottom: 0;left: 0;right: 0;z-index: 1;padding: 0 15px;}
+
+/*提交订单*/
+
+/*提交订单页面*/
+/*订单信息*/
+.alert-info{margin: 10px;height: 150px;text-align: center; }
+.alert-info .shipid{font-size: 20px}
+.alert-info .route{font-size: 24px;}
+/*出行人信息*/
+.jumbotron{margin: 10px;}
+/*保险注意事项等模块*/
+.tips_tab{position: fixed;bottom: 65px;}
+/*提交订单按钮*/
+.order-submit {height: 62px;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;background: #f3f3f3;border-top: 1px solid #dadada;padding: 10px 12px;line-height: 40px;position: fixed;width: 100%;left: 0;bottom: 0;}
+.order-submit-fixed {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;background: #f3f3f3;border-top: 1px solid #dadada;padding: 10px 12px;line-height: 40px;position: fixed;width: 100%;left: 0;bottom: 0; }
+.order-submit-c1 {font-size: 15px;line-height: 40px; }
+.order-submit-c1 .text-important {font-size: 20px; }
+.order-submit .btn {font-size: 20px;-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;display: block;margin-left: 20px;height: 40px;line-height: 30px; }
