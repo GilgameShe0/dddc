@@ -52,7 +52,14 @@ class Menu extends CI_Controller {
 		// exit();
 		$this->load->view('dddc/shipdetails.php',$ship_data);
 	}
-	public function checkinfo_view(){
+
+	// 提交订单数据
+	function checkinfo_view(){
+
+		$shipid = $this->input->get('shipid');
+		$ship_data['ship_info'] = $this->list_model->get_ships_byid($shipid);
+		$matou = $_SESSION['matou'];
+		$ship_data['matou'] = $matou;
 		$this->load->view('dddc/checkinfo.php');
 	}
 

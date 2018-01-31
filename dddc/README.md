@@ -1,2 +1,0 @@
-# dddc
-GilgameShe0

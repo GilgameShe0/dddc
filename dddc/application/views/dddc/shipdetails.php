@@ -11,7 +11,7 @@
 </head>
 <body>
 <section class="list_header">
-    <a class="back_icon"><</a>
+    <a class="back_icon" onclick="window.history.go(-1)"><</a>
     <h1 class="nav_title">详情</h1>
 </section>
 
@@ -32,4 +32,10 @@
     立即预约
 </section>
 </body>
-</html>
+<script type="text/javascript">
+    $(".bottom_tab").click(function(){
+        var shipid = $('.title').text();
+        window.location.href = '<?php echo HOST_NAME."/menu/checkinfo_view";?>'+"?shipid="+shipid;
+    })  
+</script>
+</html>  

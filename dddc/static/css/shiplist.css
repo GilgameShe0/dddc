@@ -6,7 +6,7 @@ div, p, img, ul, ol, li, form, input, label, dl, dt, dd, h1, h2, h3, h4, h5, h6 
 /*头部返回键和标题*/
 .list_header {height: 44px;line-height: 44px;min-width: 240px;background: #6684ed;color: #fff;font-size: 18px;text-align: center;position: fixed;top: 0;left: 0;right: 0;z-index: 1;padding: 0 15px;}
 .back_icon{position: absolute;top: 6px;left: 10px;color: #fff;width: 20px;padding: 5px;height: 25px;display: inline-block;text-decoration: none;cursor: auto;line-height: 25px;}
-.nav_title {max-width: 220px;overflow: auto;white-space: nowrap;display: inline-block;font-size: 100%;margin:0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0;-webkit-margin-end: 0;font-weight: bold;}
+.nav_title {max-width: 220px;white-space: nowrap;display: inline-block;font-size: 100%;margin:0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0;-webkit-margin-end: 0;font-weight: bold;}
 
 .ships_tab {position: relative;display: block;}
 /*显示用户已选择面板*/
