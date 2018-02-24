@@ -1,16 +1,13 @@
-body {min-width: 320px;max-width: 540px;font-size: 16px;margin: 0 auto;padding-top: 44px;}
-body, input, textarea, button, select, pre, tt, code, kbd, samp, optgroup, option {line-height: 1.5;font-family: arial,'\5b8b\4f53','\5fae\8f6f\96c5\9ed1',verdana,helvetica,sans-serif;}
-html {background: #f3f3f3;color: #333;font-size: 16px;}
-div, p, img, ul, ol, li, form, input, label, dl, dt, dd, h1, h2, h3, h4, h5, h6 {list-style-type: none;margin: 0;padding: 0; display: block;}
-
 /*头部返回键和标题*/
-.list_header {height: 44px;line-height: 44px;min-width: 240px;background: #6684ed;color: #fff;font-size: 18px;text-align: center;position: fixed;top: 0;left: 0;right: 0;z-index: 1;padding: 0 15px;}
-.back_icon{position: absolute;top: 6px;left: 10px;color: #fff;width: 20px;padding: 5px;height: 25px;display: inline-block;text-decoration: none;cursor: auto;line-height: 25px;}
-.nav_title {max-width: 220px;white-space: nowrap;display: inline-block;font-size: 100%;margin:0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0;-webkit-margin-end: 0;font-weight: bold;}
+.list_header {height: 48px;line-height: 48px;min-width: 240px;background: #6684ed;color: #fff;font-size: 18px;text-align: center;position: fixed;top: 0;left: 0;right: 0;z-index: 1;padding: 0 15px;}
+.back_icon{position: absolute;top: 6px;left: 10px;color: #fff;padding: 5px;font-size: 1rem;height: 25px;display: inline-block;text-decoration: none;cursor: auto;line-height: 25px;}
+.nav_title {max-width: 220px;white-space: nowrap;display: inline-block;font-size: 1.1rem;margin:0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0;-webkit-margin-end: 0;font-weight: bold;}
 
 .ships_tab {position: relative;display: block;}
 /*显示用户已选择面板*/
-.user_tab{background: #f3f3f3;font-size: 18px;text-align: center;padding: 9px 10px;display: block;}
+.user_tab{background-color:#6684ed;color:#fff;font-size: 16px;display: block;height: 30px;line-height: 30px;padding:0 15px;}
+.s_location{width: 20%;float: left;}
+.s_date{width: 80%;float: right;text-align: center;}
 /*船列表*/
 .ship_list_tab{border-color: transparent;border-width: 0;overflow: hidden;width: 100%;height: 100%;border-style: solid;padding: 10px;}
 .ship_tips{width: 50%;display: list-item;text-align: -webkit-match-parent;padding: 0;border: none;overflow: auto;zoom: 1;overflow-x: hidden;overflow-y: hidden;line-height: 140%;float: left;margin: auto;}
@@ -20,12 +17,15 @@ div, p, img, ul, ol, li, form, input, label, dl, dt, dd, h1, h2, h3, h4, h5, h6 
 
 /*船信息*/
 .bottom_tab{height: 60px;line-height: 60px;min-width: 240px;background: #6684ed;color: #fff;font-size: 18px;text-align: center;position: fixed;bottom: 0;left: 0;right: 0;z-index: 1;padding: 0 15px;}
+.ships_tab>img{width: 100%;height: 30%}
+.ship_info{padding: 10px 15px;background-color: #fff;color: #666;margin-top: 10px;}
+.tips{margin-bottom: 60px;}
 
 /*提交订单*/
 
 /*提交订单页面*/
 /*订单信息*/
-.alert-info{margin: 10px;height: 150px;text-align: center; }
+.alert-info{margin: 10px;height: 120px;text-align: center; }
 .alert-info .shipid{font-size: 20px}
 .alert-info .route{font-size: 24px;}
 /*出行人信息*/

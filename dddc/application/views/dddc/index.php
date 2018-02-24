@@ -1,107 +1,68 @@
-<!--
-Created by IntelliJ IDEA.
-User: mumuoo
-Date: 2018/1/12
-Time: 11:21
-To change this template use File | Settings | File Templates.
--->
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>滴滴打船demo</title>
-    <link rel="stylesheet" href="<?php echo STATIC_URL."/";?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo STATIC_URL."/";?>css/style.css">
-    <script src="<?php echo STATIC_URL."/";?>js/jquery.min.js"></script>
-    <script src="<?php echo STATIC_URL."/";?>js/bootstrap.min.js"></script>
-    <script src="<?php echo STATIC_URL."/";?>js/laydate/laydate.js"></script> <!--时间选择器-->
-
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>鱼多多</title>
+    <link rel="stylesheet" href="<?php echo STATIC_URL."/";?>css/base.css"/>
+    <link rel="stylesheet" href="<?php echo STATIC_URL."/";?>css/index.css"/>
 </head>
 <body>
-<div class="title">滴滴打船demo</div>
-    <div class="menu">
-    <ul id="myTab" class="nav nav-tabs">
-    <li class="active"><a href="#home" data-toggle="tab">打船捕鱼</a></li>
-<li><a href="#xxhd" data-toggle="tab">休闲海钓</a></li>
-<li><a href="#yjl" data-toggle="tab">渔家乐</a></li>
-<li><a href="#xc" data-toggle="tab">鲜船</a></li>
-</ul>
+<!--头部-搜索栏-->
+<header>
+    <span>鱼多多</span>
+    <a href="#">
+        <span>我 的</span>
+    </a>
+</header>
+<!--头部-搜索栏-结束-->
+<div class="banner">
+    <div id="banner_autoShow" class="swipe">
+        <div class='swipe-wrap'>
+            <div><img src="<?php echo STATIC_URL."/";?>image/banner1.jpg" /></div>
+            <div><img src="<?php echo STATIC_URL."/";?>image/banner2.jpg" /></div>
+            <div><img src="<?php echo STATIC_URL."/";?>image/banner3.jpg" /></div>
+            <div><img src="<?php echo STATIC_URL."/";?>image/banner4.jpg" /></div>
+        </div>
+        <div class="circlt">
+            <ul>
+                <li class="cur"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
 </div>
-<div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade in active" id="home">
-    <div>
-    登船码头:
-        <select class="matou">
-        <option>码头1</option>
-        <option>码头2</option>
-        <option>码头3</option>
-        <option>码头4</option>
-        </select>
-    </div><br>
-    <div>
-    出行人数:
-        <select class="renshu">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        </select>
-    <label><input class="pinchuan" type="radio" value="" />拼船 </label>
-    </div><br>
-    <div>
-    出发日期:<input class="date">
-    <br><br>
+<nav>
+    <div class="row">
+        <div class="col">
+            <a href="<?php echo HOST_NAME."/menu/dcby";?>">租船捕鱼</a>
+        </div>
     </div>
-<a class="sub-btn">搜索</a>
+    <div class="row">
+        <div class="col">
+            <a href="<?php echo HOST_NAME."/menu/xxhd";?>">休闲海钓</a>
+        </div>
     </div>
-    <div class="tab-pane fade" id="xxhd">
-    <p>休闲海钓</p>
+    <div class="row">
+        <div class="col">
+            <a href="<?php echo HOST_NAME."/menu/yjl";?>">民 宿</a>
+        </div>
     </div>
-    <div class="tab-pane fade" id="yjl">
-    <p>渔家乐</p>
+    <div class="row">
+        <div class="col">
+            <a href="<?php echo HOST_NAME."/menu/fishshop";?>">鱼多多商城</a>
+        </div>
     </div>
-    <div class="tab-pane fade" id="xc">
-    <p>鲜船</p>
-    </div>
-    </div>
-    </body>
-<script>
-    laydate.render({
-        elem: '.date' //指定元素
-    });
-
-    $(".sub-btn").click(function(){
-        var matou = $(".matou option:selected").val() ;
-        var renshu = $(".renshu option:selected").val() ;
-        var date = $(".date").val();
-        if(!matou){
-            alert('请选择出发码头！');
-            return;
-        }else if(!date){
-            alert('请选择出发日期！');
-            return;
-        }else {
-             $.ajax({
-                url:"<?php echo HOST_NAME."/menu/search_ajax";?>",
-                data:{matou:matou,renshu:renshu,date:date},
-                type:"POST",
-                dataType:"json",
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',//防止乱码
-                success:function(back){
-                    if(back.state == 1){
-                        window.location.href = '<?php echo HOST_NAME."/menu/search_list";?>';
-                    }               
-                }
-            });           
-         }
-    })
-
-</script>
-
+</nav>
+<section class="bottom_tab">
+    <div><a href="#">关于我们</a></div>
+    <div><a href="#">加入我们</a></div>
+</section>
+</body>
 </html>
+<script src="<?php echo STATIC_URL."/";?>js/jquery-1.11.2.min.js"></script>
+<script src="<?php echo STATIC_URL."/";?>js/swipe2.js"></script>
+<script src="<?php echo STATIC_URL."/";?>js/index.js"></script>

@@ -1,3 +1,10 @@
-.title{height: 10%;width: 100%;background-color: #6684ed;text-align: center;font-size: 30px;}
-.nav-tabs>li {float: left;margin-bottom: -1px;width: 25%;}
-.tab-content{font-size:18px;height: 40%;margin: 10%;}
+.tab-content{font-size:18px;background-color:#fff;width: 100%;}
+.selected-matou,.start_date{height: 60px;font-size: 1.2rem;border-bottom: 1px solid #e8e8e8;line-height: 60px;padding-left: 20px;}
+.matou{background-color:#E8E8E8;}
+.selected-matou-text{margin-left: 40px;}
+.matou>li{height: 40px;font-size: 1.1rem;text-align: center;line-height: 40px;}
+.start_date>input{height: 40px;margin-left: 40px;}
+.right-icon{font-size: 1.3rem;color:#A0A0A0;float: right;padding-right: 20px;}
+.search_btn{padding: 20px 70px;}
+.search_btn>a{width: 100%;}
+.matou{display:none;}
