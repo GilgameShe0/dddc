@@ -61,8 +61,8 @@
           <div class="col-gwd-2-50">
             <ul class="leftul">
               <li><a href="javascript:void(0);" class="active"><span class="timeleft gwd_p red">默认排序</span><span class="timeright gwd_p"></span></a></li>
-              <li><a href="javascript:void(0);"><span class="timeleft gwd_p">价格由低到高</span><span class="timeright gwd_p">></span></a></li>
-              <li><a href="javascript:void(0);"><span class="timeleft gwd_p">价格由高到低</span><span class="timeright gwd_p">></span></a></li>
+              <li><a href="javascript:void(0);"><span class="timeleft gwd_p" id='asc'>价格由低到高</span><span class="timeright gwd_p">></span></a></li>
+              <li><a href="javascript:void(0);"><span class="timeleft gwd_p" id='desc'>价格由高到低</span><span class="timeright gwd_p">></span></a></li>
             </ul>
           </div><!-- col-gwd-2-50 -->
         </div><!-- row -->
@@ -72,66 +72,29 @@
     <!-- === Gwd_index === -->
     <div id="gwd_index">
       <div class="container">
-        <a href="javascript:void(0);">
-          <div class="row">
-            <div class="col-gwd-2-39">
-              <span></span>
-              <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-            </div><!-- col-gwd-2-39 -->
-            <div class="col-gwd-2-61">
-              <div class="title gwd_p_big">带鱼</div>
-              <div class="price gwd_p_big red">60元/斤</div>
-              <div class="mall-name gwd_p"> 最早到达：3-10</div>
-              <div class="mall-time gwd_p">在售:20</div>
-            </div><!-- col-gwd-2-61 -->
-          </div><!-- row -->
-        </a>
-        <hr>
-        <a href="javascript:void(0);">
-          <div class="row">
-            <div class="col-gwd-2-39">
-              <span></span>
-              <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-            </div><!-- col-gwd-2-39 -->
-            <div class="col-gwd-2-61">
-              <div class="title gwd_p_big">带鱼</div>
-              <div class="price gwd_p_big red">60元/斤</div>
-              <div class="mall-name gwd_p"> 最早到达：3-10</div>
-              <div class="mall-time gwd_p">在售:20</div>
-            </div><!-- col-gwd-2-61 -->
-          </div><!-- row -->
-        </a>
-        <hr>
-        <a href="javascript:void(0);">
-          <div class="row">
-            <div class="col-gwd-2-39">
-              <span></span>
-              <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-            </div><!-- col-gwd-2-39 -->
-            <div class="col-gwd-2-61">
-              <div class="title gwd_p_big">带鱼</div>
-              <div class="price gwd_p_big red">60元/斤</div>
-              <div class="mall-name gwd_p"> 最早到达：3-10</div>
-              <div class="mall-time gwd_p">在售:20</div>
-            </div><!-- col-gwd-2-61 -->
-          </div><!-- row -->
-        </a>
-        <hr>
-        <a href="javascript:void(0);">
-          <div class="row">
-            <div class="col-gwd-2-39">
-              <span></span>
-              <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-            </div><!-- col-gwd-2-39 -->
-            <div class="col-gwd-2-61">
-              <div class="title gwd_p_big">带鱼</div>
-              <div class="price gwd_p_big red">60元/斤</div>
-              <div class="mall-name gwd_p"> 最早到达：3-10</div>
-              <div class="mall-time gwd_p">在售:20</div>
-            </div><!-- col-gwd-2-61 -->
-          </div><!-- row -->
-        </a>
-        <hr>
+        <ul class="shop_list_tab">
+          <?php foreach ($news_item as $item): ?>
+            <li class="shop_tips" data-flag="<?php echo $item['fishid'] ?>">
+              <a href="javascript:void(0);">
+                <div class="row">
+                  <div class="col-gwd-2-39">
+                    <span></span>
+                    <img src="<?php echo $item['imgurl']?>" alt="促销活动" class="gwd-img-block-center">
+                  </div><!-- col-gwd-2-39 -->
+                  <div class="col-gwd-2-61">
+                    <div class="title gwd_p_big"><?php echo $item['type'] ?></div>
+                    <div class="price gwd_p_big red">
+                        <p class="prices" data-price="<?php echo $item['min(goodsinfo.price)']?>"><?php echo $item['min(goodsinfo.price)'] ?>元/斤起
+                        </p>
+                    </div>
+                    <div class="mall-name gwd_p"><?php echo $item['min(shopship_info.land_date)'] ?></div>
+                    <div class="mall-time gwd_p">在售：<?php echo $item['sum(goodsinfo.f)'] ?></div>
+                  </div><!-- col-gwd-2-61 -->
+                </div><!-- row -->
+              </a>
+            </li>
+          <?php endforeach ;?> 
+        <ul class="hotel_list_tab">
       </div><!-- container -->
     </div><!-- gwd_index -->
     <!-- === End Gwd_index === -->
@@ -145,5 +108,40 @@
     <script type="text/javascript" src="<?php echo STATIC_URL."/"?>fishshop/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo STATIC_URL."/"?>fishshop/js/index.js" charset="utf-8"></script>
     <script type="text/javascript" src="<?php echo STATIC_URL."/"?>fishshop/js/goTop.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var asc = function(a, b) {
+        return $(a).find('.prices').data('price') > $(b).find('.prices').data('price') ? 1 : -1;
+        }
+        var desc = function(a, b) {
+            return $(a).find('.prices').data('price') > $(b).find('.prices').data('price') ? -1 : 1;
+        }
+        var sortByInput = function(sortBy) {
+            var sortEle = $('.shop_list_tab>li').sort(sortBy);
+            $('.shop_list_tab').empty().append(sortEle);
+
+        }
+        $('#desc').click(function() {
+            sortByInput(desc);
+        });
+
+        $('#asc').click(function() {
+            sortByInput(asc);
+        });
+        
+        // $('.matou').click(function(){
+        //      var mt_id = $(this).text();
+        //      window.location.href = '<?php echo HOST_NAME."/yjl/news/view_sort";?>'+"?mt_id="+mt_id;
+        // });
+       
+    });
+    $(".shop_list_tab").on("click","li",function(){ 
+        var fishid = $(this).data("flag");
+        var min_price=$(this).find('.prices').data("price");
+        var type=$(this).find('.title').text();
+        window.location.href = '<?php echo HOST_NAME."/shops/shop/detail";?>'+"?fishid="+fishid+"&min_price="+min_price+"&type="+type;
+    })
+
+</script>
   </body>
 </html>

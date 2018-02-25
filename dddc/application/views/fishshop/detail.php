@@ -41,8 +41,8 @@
     <!-- === Gwd_content === -->
     <div id="gwd_content">
       <div class="container">
-        <div class="fultitle gwd_p_big">舟山新鲜带鱼</div>
-        <div class="fulprice gwd_p_big">60元起/斤</div>
+        <div class="fultitle gwd_p_big">舟山新鲜<?php echo $type;?></div>
+        <div class="fulprice gwd_p_big"><?php echo $min_price;?>/斤起</div>
         <div class="need">
           <div class="indetail gwd_p">商品介绍</div>
         </div><!-- need -->
@@ -50,6 +50,7 @@
           <div class="relateddetail">
             <a href="javascript:void(0);"><div class="gwd_p_big rfdiv">在售船只</div></a>
             <div>
+              <?php foreach ($news_item as $item):?>
               <a href="javascript:void(0);">
                 <div class="row">
                   <div class="col-gwd-2-39">
@@ -57,64 +58,13 @@
                     <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
                   </div><!-- col-gwd-2-39 -->
                   <div class="col-gwd-2-61">
-                    <div class="smalltitle gwd_p_big">K0001 <br> 库存：200kg</div>
-                    <div class="smallprice gwd_p_big red">59元/斤 </div>
-                    <div class="smallmallname gwd_p_big">预计靠岸：2018-3-10</div>
+                    <div class="smalltitle gwd_p_big"><?php echo $item['b_shipid']?><br> 库存：<?php echo $item['stock']?></div>
+                    <div class="smallprice gwd_p_big red"><?php echo $item['price']?>斤/元</div>
+                    <div class="smallmallname gwd_p_big">预计靠岸：<?php echo $item['land_date']?></div>
                   </div><!-- col-gwd-2-61 -->
                 </div><!-- row -->
               </a>
-              <a href="javascript:void(0);">
-                <div class="row">
-                  <div class="col-gwd-2-39">
-                    <span></span>
-                    <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-                  </div><!-- col-gwd-2-39 -->
-                  <div class="col-gwd-2-61">
-                    <div class="smalltitle gwd_p_big">K0001 <br> 库存：200kg</div>
-                    <div class="smallprice gwd_p_big red">59元/斤 </div>
-                    <div class="smallmallname gwd_p_big">预计靠岸：2018-3-10</div>
-                  </div><!-- col-gwd-2-61 -->
-                </div><!-- row -->
-              </a>
-              <a href="javascript:void(0);">
-                <div class="row">
-                  <div class="col-gwd-2-39">
-                    <span></span>
-                    <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-                  </div><!-- col-gwd-2-39 -->
-                  <div class="col-gwd-2-61">
-                    <div class="smalltitle gwd_p_big">K0001 <br> 库存：200kg</div>
-                    <div class="smallprice gwd_p_big red">59元/斤 </div>
-                    <div class="smallmallname gwd_p_big">预计靠岸：2018-3-10</div>
-                  </div><!-- col-gwd-2-61 -->
-                </div><!-- row -->
-              </a>
-              <a href="javascript:void(0);">
-                <div class="row">
-                  <div class="col-gwd-2-39">
-                    <span></span>
-                    <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-                  </div><!-- col-gwd-2-39 -->
-                  <div class="col-gwd-2-61">
-                    <div class="smalltitle gwd_p_big">K0001 <br> 库存：200kg</div>
-                    <div class="smallprice gwd_p_big red">59元/斤 </div>
-                    <div class="smallmallname gwd_p_big">预计靠岸：2018-3-10</div>
-                  </div><!-- col-gwd-2-61 -->
-                </div><!-- row -->
-              </a>
-              <a href="javascript:void(0);">
-                <div class="row">
-                  <div class="col-gwd-2-39">
-                    <span></span>
-                    <img src="<?php echo STATIC_URL."/"?>fishshop/image/loading.jpg" alt="促销活动" class="gwd-img-block-center">
-                  </div><!-- col-gwd-2-39 -->
-                  <div class="col-gwd-2-61">
-                    <div class="smalltitle gwd_p_big">K0001 <br> 库存：200kg</div>
-                    <div class="smallprice gwd_p_big red">59元/斤 </div>
-                    <div class="smallmallname gwd_p_big">预计靠岸：2018-3-10</div>
-                  </div><!-- col-gwd-2-61 -->
-                </div><!-- row -->
-              </a>
+            <?php endforeach ;?>
             </div><!-- div -->
           </div>
         </div><!-- related -->

@@ -53,7 +53,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="<?php echo HOST_NAME."/menu/fishshop";?>">鱼多多商城</a>
+            <a href="<?php echo HOST_NAME."/shops/shop/index";?>">鱼多多商城</a>
         </div>
     </div>
 </nav>
