@@ -1,105 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Menu extends CI_Controller {
-
-	public function __construct()
+class ms extends CI_Controller {
+/*****************舟山民宿************************/
+	
+    public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('list_model');
+		$this->load->model('ms_model');
 		$this->load->library('session');
 		$openid = "qs12edq2sqryh";
 		$this->session->set_userdata("openid",$openid);
 	}
 
-	public function index()  //显示主页
-	{
-		$this->load->view('index.php');
-	}
-
-	public function dcby()   //显示租船捕鱼入口
-	{
-		$this->load->view('dcby/index.php');
-	}
-
-	public function xxhd()   //显示休闲海钓入口
-	{
-		$this->load->view('xxhd/index.php');
-	}
-
-	public function fishshop()   //显示鱼商城入口
-	{
-		$this->load->view('fishshop/index.php');
-	}
-
-	// public function ms()   //显示租船捕鱼入口
-	// {
-	// 	$this->load->view('yjl/yjllist.php');
-	// }
-
-	public function search_ajax()
-	{
-		$matou = $this->input->post('matou');
-		$date = $this->input->post('date');
-        $type = $this->input->post('type');
-		$newdata = array(
-			'matou' => $matou,
-			'date' => $date,
-			'type' => $type
-		);
-		// var_dump($newdata);
-		// exit();
-		$this->session->set_userdata($newdata);
-		if($newdata){
-			$back = array(
-			'state' => 1,
-			'msg' => 'ok' 
-			);
-		};
-		echo json_encode($back);
-		exit; 
-	}
-	public function search_list()
-	{
-		$matou = $_SESSION['matou'];
-		$type = $_SESSION['type'];
-	    $date = $_SESSION['date'];
-		// echo $type;
-		// exit();
-		$ship_data['ship_info'] = $this->list_model->get_ships($matou,$type);
-		// var_dump($ship_data);
-		// exit();
-		$ship_data['date'] = $date;
-		$ship_data['matou'] = $matou;
-		$this->load->view('dddc/shiplist.php',$ship_data,$date);
-	}
-
-	public function shipinfo_view(){
-		$shipid = $this->input->get('shipid');
-		$ship_data['ship_info'] = $this->list_model->get_ships_byid($shipid);
-		// var_dump($ship_data);
-		// exit();
-		$this->load->view('dddc/shipdetails.php',$ship_data);
-	}
-
-	// 提交订单数据
-	function checkinfo_view(){
-
-		$shipid = $this->input->get('shipid');
-		$ship_data['ship_info'] = $this->list_model->get_ships_byid($shipid);
-		foreach ($ship_data['ship_info'] as $row)
-		{	
-			$ship_data['shipid'] = $row['shipid'];
-		    $ship_data['price'] = $row['price'];
-		}
-		$matou = $_SESSION['matou'];
-		$date = $_SESSION['date'];
-		$ship_data['matou'] = $matou;
-		$ship_data['start_date'] = $date;
-		$this->load->view('dddc/checkinfo.php',$ship_data);
-	}
-
-	/*****************舟山民宿************************/
 	public function yjl()   //显示渔家乐入口
 	{
 		$hotel_data['hotel_info'] = $this->list_model->get_hotels();
@@ -239,7 +152,4 @@ class Menu extends CI_Controller {
 	}
 
 	/*********************舟山民宿**********************/
-
-	/****用户登录*****/
-
 }

@@ -55,7 +55,7 @@ To change this template use File | Settings | File Templates.
         $(".sub-btn").click(function(){
             var matou = $(".selected-matou-text").text() ;
             var date = $(".date").val();
-    
+            var type = 2;
             if(!matou){
                 alert('请选择出发码头！');
                 return;
@@ -65,13 +65,13 @@ To change this template use File | Settings | File Templates.
             }else {
                  $.ajax({
                     url:"<?php echo HOST_NAME."/menu/search_ajax";?>",
-                    data:{matou:matou,date:date},
+                    data:{matou:matou,date:date,type:type},
                     type:"POST",
                     dataType:"json",
                     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',//防止乱码
                     success:function(back){
                         if(back.state == 1){
-                            window.location.href = '<?php echo HOST_NAME."/menu/search_list";?>'
+                            window.location.href = '<?php echo HOST_NAME."/xxhd/search_list";?>'
                         }               
                     }
                 });           

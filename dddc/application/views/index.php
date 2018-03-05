@@ -48,7 +48,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="<?php echo HOST_NAME."/menu/ms";?>">民 宿</a>
+            <a href="<?php echo HOST_NAME."/ms/yjl";?>">民 宿</a>
         </div>
     </div>
     <div class="row">

@@ -1,7 +1,5 @@
 <?php
-class List_model extends CI_Model {
-	
-	// 按码头搜索船
+class xxhd_model extends CI_Model {
 	public function get_ships($matou,$type)
 	{
 	    $query = $this->db->query("SELECT * FROM shipinfo WHERE location = '$matou' AND type='$type'");
@@ -34,5 +32,4 @@ class List_model extends CI_Model {
  		$query = $this->db->query("SELECT * FROM roominfo WHERE hotelid = '$hotelid'");
  		return $query->result_array();
 	}
-	  
 }
