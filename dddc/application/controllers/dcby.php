@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class xxhd extends CI_Controller {
+class dcby extends CI_Controller {
     
     public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('xxhd_model');
+		$this->load->model('dcby_model');
 		$this->load->library('session');
 		$openid = "qs12edq2sqryh";
 		$this->session->set_userdata("openid",$openid);
@@ -14,7 +14,7 @@ class xxhd extends CI_Controller {
 
 	public function search_ajax()
 	{
-		$matou = $this->input->post('matou');
+		$matou =$this->input->post('matou');
 		$date = $this->input->post('date');
         $type = $this->input->post('type');
 		$newdata = array(
@@ -42,26 +42,26 @@ class xxhd extends CI_Controller {
 	    $date = $_SESSION['date'];
 		// echo $type;
 		// exit();
-		$ship_data['ship_info'] = $this->xxhd_model->get_ships($matou,$type);
+		$ship_data['ship_info'] = $this->dcby_model->get_ships($matou,$type);
 		// var_dump($ship_data);
 		// exit();
 		$ship_data['date'] = $date;
 		$ship_data['matou'] = $matou;
-		$this->load->view('xxhd/shiplist',$ship_data,$date);
+		$this->load->view('dcby/shiplist',$ship_data,$date);
 	}
 
 	public function shipinfo_view(){
 		$shipid = $this->input->get('shipid');
-		$ship_data['ship_info'] = $this->xxhd_model->get_ships_byid($shipid);
+		$ship_data['ship_info'] = $this->dcby_model->get_ships_byid($shipid);
 		// var_dump($ship_data);
 		// exit();
-		$this->load->view('xxhd/shipdetails.php',$ship_data);
+		$this->load->view('dcby/shipdetails.php',$ship_data);
 	}
 
 	public function checkinfo_view(){
 
 	$shipid = $this->input->get('shipid');
-	$ship_data['ship_info'] = $this->xxhd_model->get_ships_byid($shipid);
+	$ship_data['ship_info'] = $this->dcby_model->get_ships_byid($shipid);
 	foreach ($ship_data['ship_info'] as $row)
 	{	
 		$ship_data['shipid'] = $row['shipid'];
@@ -71,7 +71,7 @@ class xxhd extends CI_Controller {
 	$date = $_SESSION['date'];
 	$ship_data['matou'] = $matou;
 	$ship_data['start_date'] = $date;
-	$this->load->view('xxhd/checkinfo.php',$ship_data);
+	$this->load->view('dcby/checkinfo.php',$ship_data);
 	}
 
 

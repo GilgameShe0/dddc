@@ -102,7 +102,7 @@
 
         $(".buy-sure").click(function(){
             var shipid = $('.old').text();
-            window.location.href = '<?php echo HOST_NAME."/xxhd/checkinfo_view";?>'+"?shipid="+shipid;
+            window.location.href = '<?php echo HOST_NAME."/dcby/checkinfo_view";?>'+"?shipid="+shipid;
         })  
     </script>
 </body>

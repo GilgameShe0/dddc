@@ -64,14 +64,14 @@ To change this template use File | Settings | File Templates.
                 return;
             }else {
                  $.ajax({
-                    url:"<?php echo HOST_NAME."/menu/search_ajax";?>",
+                    url:"<?php echo HOST_NAME."/dcby/search_ajax";?>",
                     data:{matou:matou,date:date,type:type},
                     type:"POST",
                     dataType:"json",
                     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',//防止乱码
                     success:function(back){
                         if(back.state == 1){
-                            window.location.href = '<?php echo HOST_NAME."/menu/search_list";?>'
+                            window.location.href = '<?php echo HOST_NAME."/dcby/search_list";?>'
                         }               
                     }
                 });           
